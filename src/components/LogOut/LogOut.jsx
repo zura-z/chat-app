@@ -1,27 +1,15 @@
-import React from 'react'
-import ChatRoom from './ChatRoom'
+import React from "react";
 
-import { UserAuth } from '../../context/AuthContext'
-
+import ChatRoom from "./ChatRoom";
+import LogOutButton from "./LogOutButton";
 
 function LogOut() {
-    const {logOut} = UserAuth();
-
-    const handleLogOut = async() => {
-        try {
-            await logOut()
-        } catch (error) {
-            console.log(error)
-        }
-    }
-
-    return (
-        <div>
-            <ChatRoom />
-
-            <button onClick={handleLogOut}>Log Out</button>
-        </div>
-    )
+  return (
+    <div>
+      <ChatRoom />
+      <LogOutButton />
+    </div>
+  );
 }
 
-export default LogOut
+export default LogOut;
