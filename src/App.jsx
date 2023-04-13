@@ -1,20 +1,18 @@
 import React from "react";
-import { UserAuth } from "./context/AuthContext";
+
+import SignIn from "./components/SignIn/SignIn";
+import LogOut from "./components/LogOut/LogOut";
+
+import { UserAuth } from './context/AuthContext'
 
 function App() {
-  const { googleSignIn } = UserAuth();
-
-  const handleGoogleSignIn = async () => {
-    try {
-      await googleSignIn();
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  const {user} = UserAuth();
 
   return (
-    <div onClick={handleGoogleSignIn} className="App">
-      Chat App
+    <div>
+      
+      {user ? <LogOut /> : <SignIn />}
+
     </div>
   );
 }
