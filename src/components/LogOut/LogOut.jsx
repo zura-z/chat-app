@@ -1,5 +1,8 @@
 import React from 'react'
+import ChatRoom from './ChatRoom'
+
 import { UserAuth } from '../../context/AuthContext'
+
 
 function LogOut() {
     const {logOut} = UserAuth();
@@ -14,6 +17,8 @@ function LogOut() {
 
     return (
         <div>
+            <ChatRoom />
+
             <button onClick={handleLogOut}>Log Out</button>
         </div>
     )
