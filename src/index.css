@@ -15,7 +15,3 @@
 body {
   background: var(--background);
 }
-
-.lightIMG {
-  filter: brightness(0) invert(1);
-}
