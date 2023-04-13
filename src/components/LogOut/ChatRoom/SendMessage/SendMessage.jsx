@@ -5,6 +5,8 @@ import { addDoc, collection } from "firebase/firestore";
 import { UserAuth } from "../../../../context/AuthContext";
 import { db } from "../../../../firebase/config";
 
+import Anonymous from '../../../../assets/anonymous.png'
+
 const SendMessage = () => {
   const [message, setMessage] = useState("");
 
@@ -17,7 +19,7 @@ const SendMessage = () => {
         text: message,
         createdAt: serverTimestamp(),
         uid,
-        photoURL,
+        photoURL: photoURL || Anonymous,
       });
     } catch (err) {
       console.log(err);
