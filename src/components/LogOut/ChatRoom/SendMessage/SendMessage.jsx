@@ -16,6 +16,7 @@ const SendMessage = () => {
 
   const sendMessage = async (e) => {
     e.preventDefault();
+    setMessage("")
 
     if (message) {
       try {
@@ -30,6 +31,7 @@ const SendMessage = () => {
         console.log(err);
       }
     }
+
   };
 
   return (

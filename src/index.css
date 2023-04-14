@@ -9,7 +9,6 @@
 :root {
   font-size: 1rem;
 
-  --background: rgb(231, 231, 231);
   --primary-color: #1a1a1f;
   --secondary-color: #3207aa;
   --tertiary-color: #fff;
@@ -19,7 +18,7 @@
 }
 
 body {
-  background: var(--background);
+  background: var(--background-color);
 }
 
  /* width */

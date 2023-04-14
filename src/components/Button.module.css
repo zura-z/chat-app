@@ -8,8 +8,8 @@
     outline: none;
     border-radius: 1px;
 
-    color: black;
-    background-color: #cacaca;
+    color: var(--tertiary-color);
+    background-color: var(--micro-background-color);
 
     display: flex;
     justify-content: center;
@@ -22,11 +22,12 @@
 
     font-size: 1rem;
     font-weight: bold;
+
+    opacity: 0.8;
 }
 
 .Button:hover {
-    background-color: rgb(192, 192, 192);
-
+    opacity: 1;
 }
 
 .Button img {

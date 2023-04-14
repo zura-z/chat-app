@@ -35,15 +35,11 @@
         position: relative;
         bottom: 0;
         left: 0;
-        margin-top: -3.5rem;
-
     }
 
     .Container h5, .LogOutButton {
         padding: 0;
         margin: 0;
-
-
     }
     
     .Container h5 {
@@ -54,5 +50,7 @@
         background-color: var(--background-color);
         border: none;
         padding: 1rem;
+
+        border-top: .1px solid var(--tertiary-color);
     }
 }

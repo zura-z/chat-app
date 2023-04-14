@@ -6,7 +6,7 @@ import styles from "./ChatRoom.module.css";
 import GIF from "../../../assets/background-gif.gif";
 
 const GIFStyle = {
-  width: "100vw",
+  width: "100%",
   height: "100vh",
   position: "absolute",
   top: "0px",
