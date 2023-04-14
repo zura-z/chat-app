@@ -6,12 +6,13 @@ import LogOut from "./components/LogOut/LogOut";
 import { UserAuth } from './context/AuthContext'
 
 function App() {  
-  const {user} = UserAuth();
+  const { user } = UserAuth();
 
   return (
     <div>
-      
-      {user && user.displayName || user && user.isAnonymous ? <LogOut /> : <SignIn />}
+
+      {user && user.displayName || user && user.isAnonymous ?  <LogOut /> : null}
+      {!user && <SignIn />}
 
     </div>
   );

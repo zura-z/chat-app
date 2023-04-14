@@ -14,13 +14,13 @@ function SignIn() {
   const [loading, setLoading] = useState(false);
 
   return (
-    <div className={styles.Container} style={loading ? {transition: ".25s", opacity: "0.25"} : {}}>
+    <div className={styles.Container} style={loading ? {transition: "0.9s", opacity: "0"} : {}}>
       <h1>Chat App</h1>
 
       <Button
         img={Google}
         text="Continue with Google"
-        onClick={() => googleSignIn(setLoading)}
+        onClick={googleSignIn}
       />
       <Button
         img={Anonymous}

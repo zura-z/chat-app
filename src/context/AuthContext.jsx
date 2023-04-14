@@ -14,13 +14,10 @@ const AuthContext = createContext();
 export const AuthContextProvider = ({ children }) => {
   const [user, setUser] = useState({});
 
-  const googleSignIn = async (setLoading) => {
-    setLoading(true)
-
+  const googleSignIn = async () => {
     try {
       const provider = new GoogleAuthProvider();
       signInWithPopup(auth, provider);
-      setLoading(false)
     } catch (error) {
       console.log(error);
     }
