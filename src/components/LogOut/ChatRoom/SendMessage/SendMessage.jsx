@@ -14,7 +14,9 @@ const SendMessage = () => {
   const { user } = UserAuth();
   const { uid, photoURL } = user;
 
-  const sendMessage = async () => {
+  const sendMessage = async (e) => {
+    e.preventDefault();
+
     if (message) {
       try {
         await addDoc(collection(db, "chatMessages"), {
@@ -31,14 +33,14 @@ const SendMessage = () => {
   };
 
   return (
-    <div className={styles.Container}>
+    <form onSubmit={(e) => sendMessage(e)} className={styles.Container}>
       <input
         placeholder="Write"
         value={message}
         onChange={(e) => setMessage(e.target.value)}
       />
       <button onClick={sendMessage}>Send</button>
-    </div>
+    </form>
   );
 };
 
