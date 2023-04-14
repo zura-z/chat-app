@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Messages.module.css";
+
 import { UserAuth } from "../../../../context/AuthContext";
 
 function Message({ message }) {
@@ -11,7 +12,7 @@ function Message({ message }) {
   return (
     <div className={`${messageClass} ${styles.Message}`}>
       <h5>{username}</h5>
-      <img src={photoURL} alt="avatar" className="lightIMG" />
+      <img src={photoURL} alt="avatar" />
       <p>{text}</p>
     </div>
   );
