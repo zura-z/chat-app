@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Message from "./Message";
 
 import { collection, onSnapshot } from "firebase/firestore";
 import { orderBy, query } from "firebase/firestore";
 import { db } from "../../../../firebase/config";
 
-import SendMessage from '../SendMessage'
-
-import styles from './Messages.module.css'
+import styles from "./Messages.module.css";
 
 function Messages() {
+  const bottomRef = useRef(null);
+
   const [messages, setMessages] = useState([]);
 
   useEffect(() => {
@@ -18,12 +18,15 @@ function Messages() {
       const messages = [];
       querySnapshot.forEach((doc) => {
         messages.push(doc.data());
+        bottomRef.current?.scrollIntoView({ behavior: "smooth" });
       });
       setMessages(messages);
     });
 
     return () => unsubscribe;
   }, []);
+
+  useEffect(() => bottomRef.current?.scrollIntoView({ behavior: "smooth" }));
 
   return (
     <div className={styles.Container}>
@@ -33,6 +36,7 @@ function Messages() {
         <Message key={id} message={message} />
       ))}
 
+      <div ref={bottomRef} />
     </div>
   );
 }
