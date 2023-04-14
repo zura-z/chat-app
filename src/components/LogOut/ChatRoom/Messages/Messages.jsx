@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
+
 import Message from "./Message";
+import Loading from '../../../Loading'
 
 import { collection, onSnapshot } from "firebase/firestore";
 import { orderBy, query } from "firebase/firestore";
@@ -10,7 +12,7 @@ import styles from "./Messages.module.css";
 function Messages() {
   const bottomRef = useRef(null);
 
-  const [messages, setMessages] = useState([]);
+  const [messages, setMessages] = useState();
 
   useEffect(() => {
     const q = query(collection(db, "chatMessages"), orderBy("createdAt"));
@@ -32,9 +34,11 @@ function Messages() {
     <div className={styles.Container}>
       <h2>Chat App</h2>
 
-      {messages?.map((message, id) => (
-        <Message key={id} message={message} />
-      ))}
+      {messages ? (
+        messages.map((message, id) => <Message key={id} message={message} />)
+      ) : (
+        <Loading />
+      )}
 
       <div ref={bottomRef} />
     </div>
