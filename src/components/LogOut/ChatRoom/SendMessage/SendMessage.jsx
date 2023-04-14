@@ -6,6 +6,7 @@ import { UserAuth } from "../../../../context/AuthContext";
 import { db } from "../../../../firebase/config";
 
 import Anonymous from '../../../../assets/anonymous.png'
+import styles from './SendMessage.module.css'
 
 const SendMessage = () => {
   const [message, setMessage] = useState("");
@@ -27,9 +28,9 @@ const SendMessage = () => {
   };
 
   return (
-    <div>
-      <button onClick={sendMessage}>Send Message</button>
-      <input value={message} onChange={(e) => setMessage(e.target.value)} />
+    <div className={styles.Container}>
+      <input placeholder="Write" value={message} onChange={(e) => setMessage(e.target.value)} />
+      <button onClick={sendMessage}>Send</button>
     </div>
   );
 };

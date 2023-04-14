@@ -5,6 +5,10 @@ import { collection, onSnapshot } from "firebase/firestore";
 import { orderBy, query } from "firebase/firestore";
 import { db } from "../../../../firebase/config";
 
+import SendMessage from '../SendMessage'
+
+import styles from './Messages.module.css'
+
 function Messages() {
   const [messages, setMessages] = useState([]);
 
@@ -21,7 +25,16 @@ function Messages() {
     return () => unsubscribe;
   }, []);
 
-  return messages?.map((message, id) => <Message key={id} message={message} />);
+  return (
+    <div className={styles.Container}>
+      <h2>Chat App</h2>
+
+      {messages?.map((message, id) => (
+        <Message key={id} message={message} />
+      ))}
+
+    </div>
+  );
 }
 
 export default Messages;

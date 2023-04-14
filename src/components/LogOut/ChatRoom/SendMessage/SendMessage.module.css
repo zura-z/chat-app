@@ -1,0 +1,56 @@
+.Container {
+  width: calc(50% + 10vw);
+
+  display: flex;
+  justify-content: center;
+
+  margin-top: 3.5rem;
+}
+
+.Container input {
+  width: 100%;
+
+  border: none;
+  border-radius: 2px;
+  box-sizing: border-box;
+  color: black;
+  opacity: 0.75;
+  outline: none;
+  padding: 12px 20px;
+  transition: 0.4s;
+  width: 35em;
+
+  border: 1px solid black;
+
+  font-size: 1rem;
+  background-color: var(--micro-background-color);
+  color: white;
+}
+
+.Container input:focus {
+  border: 1.5px solid var(--secondary-color);
+}
+
+.Container button {
+  border: none;
+
+  background-color: var(--secondary-color);
+  color: var(--tertiary-color);
+
+  padding: 0 1.5rem;
+  cursor: pointer;
+
+  opacity: 0.85;
+  z-index: 5;
+  transition: 0.2s;
+}
+
+.Container button:hover {
+  opacity: 1;
+}
+
+@media only screen and (max-width: 768px) {
+  .Container {
+    margin-top: 1rem;
+  }
+}

@@ -1,11 +1,17 @@
 import React from "react";
+import styles from "./Messages.module.css";
+import { UserAuth } from "../../../../context/AuthContext";
 
 function Message({ message }) {
-  const { text, photoURL } = message;
+  const { user } = UserAuth();
+  const { text, photoURL, uid } = message;
+
+  const messageClass = uid === user.uid ? `${styles.Sent}` : `${styles.Received}`;
 
   return (
-    <div>
-      <img src={photoURL} alt="photo" />
+    <div className={`${messageClass} ${styles.Message}`}>
+      <h5>{user.displayName || "Anonymous"}</h5>
+      <img src={photoURL} className="lightIMG" />
       <p>{text}</p>
     </div>
   );

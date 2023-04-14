@@ -3,15 +3,45 @@
   padding: 0;
   margin: 0;
 
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: League Spartan,sans-serif;
 }
 
 :root {
   font-size: 1rem;
 
   --background: rgb(231, 231, 231);
+  --primary-color: #1a1a1f;
+  --secondary-color: #3207aa;
+  --tertiary-color: #fff;
+  --background-color: #2b2d32;
+  --micro-background-color: rgba(0, 0, 0, 0.53);
+  --error-color: #c62945;
 }
 
 body {
   background: var(--background);
 }
+
+.lightIMG {
+  filter: brightness(0) invert(1);
+}
+
+ /* width */
+ ::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--background-color);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--micro-background-color);
+} 

@@ -1,0 +1,15 @@
+.Container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+
+    background-color: var(--background-color);
+}
+
+@media only screen and (max-width: 768px) {
+    .Container {
+        margin-top: -2.1rem;
+    }
+}

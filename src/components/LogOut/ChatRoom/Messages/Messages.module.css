@@ -1,0 +1,71 @@
+.Container {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--micro-background-color);
+  width: calc(50% + 10vw);
+  max-height: 75vh;
+  overflow: auto;
+  margin: 0 auto;
+
+  padding: 2.5rem;
+  border-radius: 2px;
+
+  z-index: 5;
+}
+
+.Container h2 {
+  color: var(--tertiary-color);
+  margin-bottom: 2rem;
+}
+
+/* Message */
+.Message {
+  width: 35%;
+  margin: 1rem 1.75rem;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 1rem;
+
+  color: var(--tertiary-color);
+
+  border-radius: 5px;
+  word-wrap: break-word;
+}
+
+.Sent {
+  align-self: flex-end;
+  background-color: var(--secondary-color);
+}
+
+.Sent img {
+  right: -2rem;
+} 
+
+.Received {
+  background-color: var(--error-color);
+}
+
+.Received img {
+  left: -2rem;
+}
+
+.Message img {
+  width: 1.5rem;
+  position: absolute;
+  border-radius: 50%;
+}
+
+@media only screen and (max-width: 768px) {
+    .Container {
+        width: 95vw;
+        max-height: 80vh;
+    }
+
+    .Message {
+        margin: 1rem 0;
+        font-size: .8rem;
+        width: 90%;
+    }
+}
