@@ -18,6 +18,7 @@ const SendMessage = () => {
     if (message) {
       try {
         await addDoc(collection(db, "chatMessages"), {
+          username: user.displayName || "Anonymous",
           text: message,
           createdAt: serverTimestamp(),
           uid,
