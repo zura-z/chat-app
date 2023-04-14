@@ -32,7 +32,7 @@ function Messages() {
 
   return (
     <div className={styles.Container}>
-      <h2>Chat App</h2>
+      <h2>Chat Room</h2>
 
       {messages ? (
         messages.map((message, id) => <Message key={id} message={message} />)
