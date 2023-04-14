@@ -5,8 +5,8 @@ import { addDoc, collection } from "firebase/firestore";
 import { UserAuth } from "../../../../context/AuthContext";
 import { db } from "../../../../firebase/config";
 
-import Anonymous from '../../../../assets/anonymous.png'
-import styles from './SendMessage.module.css'
+import Anonymous from "../../../../assets/anonymous.png";
+import styles from "./SendMessage.module.css";
 
 const SendMessage = () => {
   const [message, setMessage] = useState("");
@@ -15,21 +15,27 @@ const SendMessage = () => {
   const { uid, photoURL } = user;
 
   const sendMessage = async () => {
-    try {
-      await addDoc(collection(db, "chatMessages"), {
-        text: message,
-        createdAt: serverTimestamp(),
-        uid,
-        photoURL: photoURL || Anonymous,
-      });
-    } catch (err) {
-      console.log(err);
+    if (message) {
+      try {
+        await addDoc(collection(db, "chatMessages"), {
+          text: message,
+          createdAt: serverTimestamp(),
+          uid,
+          photoURL: photoURL || Anonymous,
+        });
+      } catch (err) {
+        console.log(err);
+      }
     }
   };
 
   return (
     <div className={styles.Container}>
-      <input placeholder="Write" value={message} onChange={(e) => setMessage(e.target.value)} />
+      <input
+        placeholder="Write"
+        value={message}
+        onChange={(e) => setMessage(e.target.value)}
+      />
       <button onClick={sendMessage}>Send</button>
     </div>
   );
